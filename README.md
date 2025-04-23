@@ -17,3 +17,7 @@ It must be launched directly as an .exe (which the program handles automatically
 - In WGC mode, UAC prompts will not appear.
 - To remove the scheduled tasks, simply uninstall the program or run `delete_tasks.exe`.
 - To verify that WGC mode is active, press Win + G to open the Windows Game Bar: it will only appear on the client side if the stream is using WGC.
+
+<br>
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E214R1KB)
