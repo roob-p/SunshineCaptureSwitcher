@@ -3,4 +3,5 @@ Unregister-ScheduledTask -TaskName "Sunshine wgc" -Confirm:$false
 
 write "Tasks deleted"
 
-sleep -s 2
+start-sleep -s 2
+exit

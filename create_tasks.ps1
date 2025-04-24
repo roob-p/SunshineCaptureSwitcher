@@ -57,3 +57,4 @@ $template2 | Set-Content -Path $modifiedXmlPath2 -Encoding Unicode
 schtasks /Create /TN "$TaskName2" /XML "$modifiedXmlPath2" /F
 
 sleep -s 2
+exit
