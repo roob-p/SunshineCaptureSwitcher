@@ -1,3 +1,6 @@
+<!--[🔙 Back](https://roob-p.github.io)-->
+<!--[![🔙 Back](https://img.shields.io/badge/🔙-Back-blue)](https://roob-p.github.io)-->
+[![🔙 Back](https://img.shields.io/badge/🔙-Back-white?style=flat-square&logoColor=blue&color=blue)](https://roob-p.github.io)
 # 🔄 SunshineCaptureSwitcher
 ✨ This utility automatically switches between the WGC and DDX capture methods in Sunshine.
 When using WGC, it's not possible to stream while on the lock screen, so this program will therefore switch to DDX when the computer is locked, and switch back to WGC when the computer is unlocked.
