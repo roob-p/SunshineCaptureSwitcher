@@ -1,5 +1,8 @@
+
 if (-not $PSScriptRoot) {
-    $PSScriptRoot = "C:\SunshineCatpureSwitcher\" 
+    #$PSScriptRoot = "C:\SunshineCaptureSwitcher\" 
+$PSScriptRoot= [System.Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
+$PSScriptRoot= [System.IO.Path]::GetDirectoryName($PSScriptRoot)
 }
 
 function Replace-Placeholders {

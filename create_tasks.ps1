@@ -14,7 +14,9 @@ $TemplatePath2 = ".\Sunshine WGC.xml"
 
 
 if (-not $PSScriptRoot) {
-    $PSScriptRoot = Get-Location
+    #$PSScriptRoot = "C:\SunshineCaptureSwitcher\" 
+$PSScriptRoot= [System.Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
+$PSScriptRoot= [System.IO.Path]::GetDirectoryName($PSScriptRoot)
 }
 
 
