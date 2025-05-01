@@ -19,4 +19,5 @@ $path = IniRead($iniFile, "Path", "SunshinePath", "")
 
 Run(@ComSpec & ' /c net stop "' & "Sunshine Service" & '"', "", @SW_HIDE)
 ProcessClose("sunshine.exe")
+sleep(500)
 Run(@ComSpec & ' /c net start "' & "Sunshine Service" & '"', "", @SW_HIDE)
