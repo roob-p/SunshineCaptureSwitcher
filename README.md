@@ -12,8 +12,7 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 - From version 1.0.2 onwards, Sunshine Capture Switcher no longer modifies the Sunshine.conf file to set the capture method, but directly launches Sunshine with the `capture=wgc` flag when WGC is to be used.
 - If you don't want the tasks to automatically run on locking and unlocking the computer and prefer to launch Sunshine manually, run `Deactivate Tasks Trigger` (also available as `Activate Tasks Trigger` to restore the original functionality). You can also launch Sunshine using the Sunshine DDX and Sunshine WGC shortcuts from the Start menu and desktop.
 - When switching capture methods, you’ll need to reconnect from the client.
-- You can edit the Sunshine and Apollo installation paths in `config.ini.`
--   
+- You can edit the Sunshine and Apollo installation paths in `config.ini.`  
 
 ## 🛠️ UAC Handling system (WGC-specific):
 - When using WGC, UAC prompts are not visible in the stream. To work around this limitation, the script can automatically switch to DDX when a UAC prompt appears and return to WGC once the UAC window is closed (however, reconnecting from the client is required).
