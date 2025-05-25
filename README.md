@@ -23,7 +23,7 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
    - `-1`: Launch Sunshine in WGC mode and then close the WGC script. *(No WGC icon in the system tray).*
 
 ## 🚀 Support for Apollo:
-- Just edit `ProgToUse = Apollo` in `config.ini` and the program is ready to use!
+- Just set `ProgToUse = Apollo` in `config.ini` and the program is ready to use!
 
   
 ## ⚠️ Notes:
