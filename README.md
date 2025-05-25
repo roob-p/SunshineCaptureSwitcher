@@ -1,4 +1,4 @@
-# 🔄 Sunshine Capture Switcher
+# 🔄 Sunshine Capture Switcher 
 ✨ This utility automatically switches between the WGC and DDX capture methods in Sunshine.
 When using WGC, it's not possible to stream while on the lock screen, so this program will switch to DDX when the computer is locked, and switch back to WGC when the computer is unlocked.
 **Works with both Sunshine and Apollo. Now includes an automatic UAC-handling system when in WGC mode.**
