@@ -43,5 +43,6 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 
 - Github: [roop-p/SunshineCaptureSwitcher](https://github.com/roob-p/SunshineCaptureSwitcher/)
 - Download last version:
-  [v1.0.3](https://github.com/roob-p/SunshineCaptureSwitcher/releases/download/v1.0.3/SunshineCaptureSwicher_INSTALLER.exe)
+  [v1.0.3_x64](https://github.com/roob-p/SunshineCaptureSwitcher/releases/download/v1.0.3/SunshineCaptureSwicher_INSTALLER_x64.exe)
+  [v1.0.3_x86](https://github.com/roob-p/SunshineCaptureSwitcher/releases/download/v1.0.3/SunshineCaptureSwicher_INSTALLER_x86.exe)
   <br>
