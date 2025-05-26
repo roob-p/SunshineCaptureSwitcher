@@ -1,9 +1,9 @@
 #RequireAdmin
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_Icon=sunshine.ico
-#AutoIt3Wrapper_Res_Fileversion=1.0.3.0
+#AutoIt3Wrapper_Res_Fileversion=1.0.4.0
 #AutoIt3Wrapper_Res_ProductName=Sunshine Capture Switcher
-#AutoIt3Wrapper_Res_ProductVersion=1.0.3
+#AutoIt3Wrapper_Res_ProductVersion=1.0.4
 #AutoIt3Wrapper_Res_CompanyName=roob-p (author)
 #AutoIt3Wrapper_Res_LegalCopyright=roob-p (author)
 #AutoIt3Wrapper_Res_LegalTradeMarks=roob-p (author)
@@ -17,7 +17,7 @@ if _Singleton("Sunshine Switch WGC")= 0 Then
 	exit
 	endif
 
-AutoItSetOption("TrayIconDebug", 1) ; Mostra la variabile @error nel tooltip dell’icona nella tray
+AutoItSetOption("TrayIconDebug", 1)
 
 
 if ProcessExists("Sunshine Switch DDX.exe") Then
@@ -30,6 +30,8 @@ endif
 
 $iniFile = @ScriptDir & "\config.ini"
 $progtouse = IniRead($iniFile, "Global", "ProgToUse", "")
+$ddxicon = IniRead($iniFile, "Icons", "DdxIcon", "")
+$wgcicon = IniRead($iniFile, "Icons", "WgcIcon", "")
 ;$ddxpersistenticon = IniRead($iniFile, "Global", "DdxPersistentIcon(andScript)", "")
 
 if $progtouse = "Sunshine" then
@@ -46,7 +48,8 @@ $reswitch = IniRead($iniFile, "Global", "Reswitch", "")
 
 
 
-TraySetIcon(@ScriptDir & "\wgc.ico")
+;TraySetIcon(@ScriptDir & "\wgc.ico")
+TraySetIcon($wgcicon)
 
 
 ;Run(@ComSpec & ' /c net stop "' & "Sunshine Service" & '"', "", @SW_HIDE)
@@ -73,7 +76,8 @@ If ProcessExists("consent.exe") Then
 		ProcessClose("sunshine.exe")
 		sleep(500)
 		Run(@ComSpec & ' /c net start "' & $service & '"', "", @SW_HIDE)
-		TraySetIcon(@ScriptDir & "\ddx.ico")
+		;TraySetIcon(@ScriptDir & "\ddx.ico")
+		TraySetIcon($ddxicon)
 
 		While ProcessExists("consent.exe")
 		Sleep(1000)
@@ -87,7 +91,8 @@ If ProcessExists("consent.exe") Then
 		ProcessClose("sunshine.exe")
 
 		ShellExecute($path &"\Sunshine.exe","capture=wgc",$path,"",@SW_HIDE)
-		TraySetIcon(@ScriptDir & "\wgc.ico")
+		;TraySetIcon(@ScriptDir & "\wgc.ico")
+		TraySetIcon($wgcicon)
 
 		else
 		ShellExecute(@ScriptDir & "\ddx-reswitch1-icon.exe")
