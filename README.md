@@ -32,6 +32,8 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 - In WGC mode, UAC prompts won't show up, so the program now includes the workaround described above.
 - You can tell if WGC mode is active by checking the tray icon or by pressing Win + G to open the Windows Game Bar: it will only show on the client side when the stream is using WGC.
 - If you don't want the DDX tray icon (and its script) to stay active after launching Sunshine in DDX mode, set `DdxPersistentIcon(andScript)` to 0 in `config.ini`.
+- You can specify the tray icons to use under the `[Icons]` section in `config.ini`.  
+  If the icon files are located in the installation folder, **do not** use a relative path like `.\wgc.ico`, just write `wgc.ico`.
 <br>
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E214R1KB)
