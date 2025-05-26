@@ -19,8 +19,7 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 - In `config.ini`, `Reswitch` defines how the script behaves when UAC prompts:
    - `0`: Do nothing. Sunshine remains in WGC mode, and the WGC icon stays visible in the system tray.
    - `1`: Switch to DDX and remain there *(you’ll need to reconnect after switching).*
-   - `2`: Temporarily switch to DDX, and return to WGC once the UAC window is closed *(requires reconnecting twice from the client).*  
-     ‎‎‎‎After returning to WGC, the script remains active in the system tray and continues to monitor for future UAC prompts. 
+   - `2`: Temporarily switch to DDX, and return to WGC once the UAC window is closed *(requires reconnecting twice from the client).* ‎‎‎‎After returning to WGC, the script remains active in the system tray and continues to monitor for future UAC prompts. 
    - `-1`: Launch Sunshine in WGC mode and then close the WGC script. *(no WGC icon in the system tray).*
 
 ## 🛰️ Support for Apollo:
