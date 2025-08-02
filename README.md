@@ -27,8 +27,8 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 
 
 ### 🔧 Boot task for Autologon and No Password
-- v1.0.5 adds a third scheduled task for logon scenarios with `Autologon` enabled or `no password` is set.   
-This task runs an intermediate script (`Wait for Desktop (Autologon and no-pw).exe`) because directly launching `Sunshine WGC` in traditional login situations (with a password) would result in failed streaming (`Sunshine WGC` would start before the user can enter the password). 
+- v1.0.5 adds a third scheduled task for scenarios with `Autologon` enabled or where `no password` is set.   
+This task runs an intermediate script (`Wait for Desktop (Autologon and no-pw).exe`) which waits until the desktop has focus before launching `Sunshine WGC`. This is necessary because directly executing`Sunshine WGC` during a traditional login (with a password) causes streaming to fail, as `Sunshine WGC` would start before the user can enter their password. When the desktop is ready, you need to click on it with the mouse to launch of `Sunshine WGC`.  
 If you don't use `Autologon` and have a password, you can disable this task by running `Deactivate autologon and no-pw trigger.exe` or `Delete autologon and no-pw trigger.exe`.
 🔁 Alternatively, if `Autologon` is enabled or `no password` is set but you prefer not to use this task, you can manually copy the `Sunshine WGC.lnk` shortcut to the `shell:startup folder`. However, this approach adds a delay before `Sunshine WGC` starts.
 
