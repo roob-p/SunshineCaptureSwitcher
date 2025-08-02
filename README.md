@@ -3,7 +3,7 @@
 When using WGC, it's not possible to stream while on the lock screen, so this program will switch to DDX when the computer is locked, and switch back to WGC when the computer is unlocked.
 **Works with both Sunshine and Apollo. Now includes an automatic UAC-handling system when in WGC mode.**
 
-## 🚀 How it works:
+## 🚀 How it works: 
 - Two tasks are created in the Windows Task Scheduler:
   - Sunshine WGC, triggered when the computer is unlocked.
   - Sunshine DDX, triggered when the computer is locked (as well as during sleep, hibernation, etc.).
