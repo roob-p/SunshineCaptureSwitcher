@@ -7,8 +7,8 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 - Two tasks are created in the Windows Task Scheduler:
   - Sunshine WGC, triggered when the computer is unlocked.
   - Sunshine DDX, triggered when the computer is locked (as well as during sleep, hibernation, etc.).
-- Since version 1.0.5, a third task has benn added: `Sunshine WGC Boot (Autologon and no-pw)`, triggered at logon, to handle boot scenarios where `Autologon` is enabled or no password is set.
-This task runs an intermediate script (`Wait for Desktop (Autologon and no-pw).exe`) because directly launching Sunshine WGC in traditional login situations (with a password) would result in failed streaming (Sunshine would start before the user logs in).
+- Since version 1.0.5, a third task has benn added: `Sunshine WGC Boot (Autologon and no-pw)`, triggered at logon, to handle boot scenarios where `Autologon` is enabled or `no password` is set.
+This task runs an intermediate script (`Wait for Desktop (Autologon and no-pw).exe`) because directly launching Sunshine WGC in traditional login situations (with a password) would result in failed streaming (Sunshine would start before the user logs in).  
 You can launch `Deactivate autologon and no-pw trigger.exe` or `Deactivate autologon and no-pw trigger.exe` to disable the task if you don't use autologon and a password is set.
 - Starting from version 1.0.3, support for Apollo and a UAC-handling system have been added. The scripts can now stay active, and a system tray icon is shown to indicate which capture method is running. 
 - From version 1.0.2 onwards, Sunshine Capture Switcher no longer modifies the Sunshine.conf file to set the capture method, but directly launches Sunshine with the `capture=wgc` flag when WGC is to be used.
