@@ -25,8 +25,9 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 ## 🛰️ Support for Apollo:
 - Just set `ProgToUse = Apollo` in `config.ini` and the program is ready to use!
 
-### 🔧 Boot task for `Autologon` and `No Password`
-- Since version 1.0.5, a third scheduled task named `Sunshine WGC Boot (Autologon and no-pw)` is triggered at logon to manage scenarios where `Autologon` is enabled or `no password` is set.  
+
+### 🔧 Boot task for Autologon and No Password
+- v1.0.5 adds a third scheduled task for logon scenarios with `Autologon` enabled or `no password` is set.   
 This task runs an intermediate script (`Wait for Desktop (Autologon and no-pw).exe`) because directly launching `Sunshine WGC` in traditional login situations (with a password) would result in failed streaming (`Sunshine WGC` would start before the user can enter the password). 
 If you don't use `Autologon` and have a password, you can disable this task by running `Deactivate autologon and no-pw trigger.exe` or `Delete autologon and no-pw trigger.exe`.
 🔁 Alternatively, if `Autologon` is enabled or `no password` is set but you prefer not to use this task, you can manually copy the `Sunshine WGC.lnk` shortcut to the `shell:startup folder`. However, this approach adds a delay before `Sunshine WGC` starts.
