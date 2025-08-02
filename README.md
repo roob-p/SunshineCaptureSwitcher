@@ -25,6 +25,7 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 ## 🛰️ Support for Apollo:
 - Just set `ProgToUse = Apollo` in `config.ini` and the program is ready to use!
 
+<br>
 
 ### 🔧 Boot task for Autologon and No Password
 - v1.0.5 adds a third scheduled task for scenarios with `Autologon` enabled or `no password` is set.   
