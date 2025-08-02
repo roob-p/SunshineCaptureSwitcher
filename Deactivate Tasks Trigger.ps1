@@ -31,6 +31,17 @@ function Disable-Trigger-In-XmlString {
     $xml.PreserveWhitespace = $true  
     $xml.LoadXml($XmlString)
 
+
+
+    if ($TriggerToDisable -eq "Logon") {
+        # Disabilita tutti i LogonTrigger
+        $logonTriggers = $xml.Task.Triggers.LogonTrigger
+        foreach ($trigger in $logonTriggers) {
+            $trigger.Enabled = "false"
+        }
+    }
+    else {
+
     $triggers = $xml.Task.Triggers.SessionStateChangeTrigger
 
     foreach ($trigger in $triggers) {
@@ -38,17 +49,20 @@ function Disable-Trigger-In-XmlString {
             $trigger.Enabled = "false"
         }
     }
-
+}
     return $xml
 }
 
 
 $TaskName = "Sunshine DDX"
 $TaskName2 = "Sunshine WGC"
+$TaskName3 = "Sunshine WGC Boot (Autologon and no-pw)"
 $TemplatePath = ".\Sunshine DDX.xml"
 $TemplatePath2 = ".\Sunshine WGC.xml"
-$ExePath = Join-Path $PSScriptRoot "Sunshine Switch ddx.exe"
-$ExePath2 = Join-Path $PSScriptRoot "Sunshine Switch wgc.exe"
+$TemplatePath3 = ".\Sunshine WGC Boot (Autologon and no-pw).xml"
+$ExePath = Join-Path $PSScriptRoot "Sunshine DDX.exe"
+$ExePath2 = Join-Path $PSScriptRoot "Sunshine WGC.exe"
+$ExePath3 = Join-Path $PSScriptRoot "Wait for Desktop (autologon and no-pw).exe"
 
 
 $templateDDX = Replace-Placeholders -TemplatePath $TemplatePath -ExePath $ExePath
@@ -63,6 +77,15 @@ $xmlWGC = Disable-Trigger-In-XmlString -XmlString $templateWGC -TriggerToDisable
 $modifiedXmlPathWGC = "$env:TEMP\sunshine_task_wgc.xml"
 $xmlWGC.Save($modifiedXmlPathWGC)  
 schtasks /Create /TN "$TaskName2" /XML "$modifiedXmlPathWGC" /F
+
+
+$templateBoot = Replace-Placeholders -TemplatePath $TemplatePath3 -ExePath $ExePath3
+$xmlBoot = Disable-Trigger-In-XmlString -XmlString $templateBoot -TriggerToDisable "Logon"
+$modifiedXmlPathBoot = "$env:TEMP\sunshine_task_boot.xml"
+$xmlBoot.Save($modifiedXmlPathBoot)  
+schtasks /Create /TN "$TaskName3" /XML "$modifiedXmlPathBoot" /F
+
+
 
 Write-Host "Tasks trigger deactivated!"
 
