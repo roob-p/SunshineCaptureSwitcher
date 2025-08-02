@@ -1,1 +1,5 @@
 .gitattributes export-ignore
+.gitattributes docs export-ignore
+.gitattributes docs/*.* export-ignore
+.gitattributes older_versions export-ignore
+.gitattributes older_versions/*.* export-ignore
