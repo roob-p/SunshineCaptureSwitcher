@@ -33,6 +33,7 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 - When the desktop is ready, you need to click on it with the mouse to launch of `Sunshine WGC`.  
 - If you don't use `Autologon` and have a password, you can disable this task by running `Deactivate autologon and no-pw trigger.exe` or `Delete autologon and no-pw trigger.exe`.  
 - 🔁 Alternatively, if `Autologon` is enabled or `no password` is set but you prefer not to use this task, you can deactivate or delete it first, then manually copy the `Sunshine WGC.lnk` shortcut to the `shell:startup folder`. However, this approach adds a delay before `Sunshine WGC` starts.
+- If your account has no password, you can optionally change the action of the `Sunshine WGC Boot (Autologon and no-pw)` task to run `Sunshine WGC.exe` directly.
 
   
 ## ⚠️ Notes:
