@@ -10,8 +10,8 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 - Two tasks are created in the Windows Task Scheduler:
   - Sunshine WGC, triggered when the computer is unlocked.
   - Sunshine DDX, triggered when the computer is locked (as well as during sleep, hibernation, etc.).
-
-- Starting from version 1.0.3, support for Apollo and a UAC-handling system have been added. The scripts can now stay active, and a system tray icon is shown to indicate which capture method is running.
+- Since version 1.0.5, a third task has benn added: `Sunshine WGC Boot (Autologon and no-pw)`, triggered at logon, to handle boot scenarios where `Autologon` is enabled or `no password` is set.
+- Starting from version 1.0.3, support for Apollo and a UAC-handling system have been added. The scripts can now stay active, and a system tray icon is shown to indicate which capture method is running. 
 - From version 1.0.2 onwards, Sunshine Capture Switcher no longer modifies the Sunshine.conf file to set the capture method, but directly launches Sunshine with the `capture=wgc` flag when WGC is to be used.
 - If you don't want the tasks to automatically run on locking and unlocking the computer and prefer to launch Sunshine manually, run `Deactivate Tasks Trigger` (also available as `Activate Tasks Trigger` to restore the original functionality). You can also launch Sunshine using the Sunshine DDX and Sunshine WGC shortcuts from the Start menu and desktop.
 - When switching capture methods, you’ll need to reconnect from the client.
@@ -22,12 +22,21 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 - In `config.ini`, `Reswitch` defines how the script behaves when UAC prompts:
    - `0`: Do nothing. Sunshine remains in WGC mode, and the WGC icon stays visible in the system tray.
    - `1`: Switch to DDX and remain there *(you’ll need to reconnect after switching).*
-   - `2`: Temporarily switch to DDX, and return to WGC once the UAC window is closed *(requires reconnecting twice from the client).*  
-     ‎‎ ‎ ‎ ‎  ‎ ‎ ‎‎After returning to WGC, the script remains active in the system tray and continues to monitor for future UAC prompts. 
+   - `2`: Temporarily switch to DDX, and return to WGC once the UAC window is closed *(requires reconnecting twice from the client).* ‎‎‎‎After returning to WGC, the script remains active in the system tray and continues to monitor for future UAC prompts. 
    - `-1`: Launch Sunshine in WGC mode and then close the WGC script. *(no WGC icon in the system tray).*
 
 ## 🛰️ Support for Apollo:
 - Just set `ProgToUse = Apollo` in `config.ini` and the program is ready to use!
+
+<br>
+
+### 🔄 Boot task for Autologon and No Password
+- v1.0.5 adds a third scheduled task for scenarios where `Autologon` is enabled or `no password` is set.   
+- This task runs an intermediate script (`Wait for Desktop (Autologon and no-pw).exe`) which waits until the desktop has focus before launching `Sunshine WGC`. This is necessary because directly executing`Sunshine WGC` during a traditional login (with a password) causes streaming to fail, as `Sunshine WGC` would start before the password prompt appears.  
+- When the desktop is ready, you need to click on it with the mouse to launch of `Sunshine WGC`.  
+- If you don't use `Autologon` and have a password, you can disable this task by running `Deactivate autologon and no-pw trigger.exe` or `Delete autologon and no-pw trigger.exe`.  
+- 🔁 Alternatively, if `Autologon` is enabled or `no password` is set but you prefer not to use this task, you can deactivate or delete it first, then manually copy the `Sunshine WGC.lnk` shortcut to the `shell:startup folder`. However, this approach adds a delay before `Sunshine WGC` starts.
+- If your account has no password, you can optionally change the action of the `Sunshine WGC Boot (Autologon and no-pw)` task to run `Sunshine WGC.exe` directly.
 
   
 ## ⚠️ Notes:
@@ -48,6 +57,6 @@ When using WGC, it's not possible to stream while on the lock screen, so this pr
 
 - Github: [roop-p/SunshineCaptureSwitcher](https://github.com/roob-p/SunshineCaptureSwitcher/)
 - Download last version:
-  [v1.0.4_x64](https://github.com/roob-p/SunshineCaptureSwitcher/releases/download/v1.0.4/SunshineCaptureSwicher_INSTALLER_x64.exe)
-  [v1.0.4_x86](https://github.com/roob-p/SunshineCaptureSwitcher/releases/download/v1.0.4/SunshineCaptureSwicher_INSTALLER_x86.exe)
+  [v1.0.5_x64](https://github.com/roob-p/SunshineCaptureSwitcher/releases/download/v1.0.5/SunshineCaptureSwicher_INSTALLER_x64.exe)
+  [v1.0.5_x86](https://github.com/roob-p/SunshineCaptureSwitcher/releases/download/v1.0.5/SunshineCaptureSwicher_INSTALLER_x86.exe)
   <br>
