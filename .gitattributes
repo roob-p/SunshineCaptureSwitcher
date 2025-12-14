@@ -3,3 +3,4 @@ docs export-ignore
 docs/*.* export-ignore
 older_versions export-ignore
 older_versions/*.* export-ignore
+exe/ export-ignore
