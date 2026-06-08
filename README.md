@@ -2,7 +2,7 @@
 ![GitHub Downloads](https://img.shields.io/github/downloads/roob-p/SunshineCaptureSwitcher/total)
 
 ✨ This utility automatically switches between WGC (*Windows.Graphics.Capture*) and DDX (*DirectX Desktop Duplication API*) in Sunshine. 
-When using WGC it's not possible to stream while on the lock screen, so the program switches to DDX on when the computer is locked, and switches back to WGC when the computer is unlocked.
+When using WGC it's not possible to stream while on the lock screen, so the program switches to DDX when the computer is locked, and switches back to WGC when the computer is unlocked.
 **Works with both Sunshine and Apollo. Now includes an automatic UAC-handling system when in WGC mode.**
 
 ## 🚀 How it works:
